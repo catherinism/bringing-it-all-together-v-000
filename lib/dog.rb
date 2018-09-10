@@ -41,6 +41,9 @@ class Dog
 
   def self.new_from_db(id, name, breed)
     new_dog = self.new
+    new_dog.id = id
+    new_dog.name = name
+    new_dog.breed = breed
  end
 
 end
