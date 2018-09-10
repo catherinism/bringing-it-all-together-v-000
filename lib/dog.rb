@@ -16,6 +16,6 @@ class Dog
       breed TEXT
     )
     SQL
-
   end
+  
 end
