@@ -39,7 +39,7 @@ class Dog
 
  def self.find_by_name(name)
   sql = <<-SQL
-         SELECT *
+         SELECT name
          FROM dogs
          WHERE name = ?
          LIMIT 1
