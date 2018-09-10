@@ -50,14 +50,14 @@ class Dog
        end.first
      end
 
-     def update
-       sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+  def update
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
   DB[:conn].execute(sql, self.name, self.breed, self.id)
-     end
+end
 
-     def save
-       if self.id
-     self.update
+  def save
+    if self.id
+      self.update
    else
      sql = <<-SQL
      INSERT INTO dogs (name, breed)
@@ -69,10 +69,14 @@ class Dog
  end
 end
 
-def self.create(name:, breed:)
-  dog = self.new(name: name, breed: breed)
-  dog.save
-  dog
-end
+  def self.create(name:, breed:)
+    dog = self.new(name: name, breed: breed)
+    dog.save
+    dog
+  end
+  
+  def self.find_by_id
+
+  end
 
 end
