@@ -6,7 +6,6 @@ class Dog
   attr_reader :id
 
   def initialize(id: nil, name:, breed:)
-    binding.pry
     @id = id
     @name = name
     @breed = breed
@@ -44,6 +43,7 @@ class Dog
 # end
 
   def self.new_from_db(row)
+    binding.pry
     new_dog = self.new
     new_dog.id = row[0]
     new_dog.name = row[1]
